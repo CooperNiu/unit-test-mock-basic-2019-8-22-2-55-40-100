@@ -2,12 +2,13 @@ package cashregister;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class CashRegisterTest {
 
-
     @Test
+    @Disabled
     public void should_print_the_real_purchase_when_call_process() {
         //given
     	Item[] items = {new Item("test_product", 1)};
@@ -24,8 +25,11 @@ public class CashRegisterTest {
     @Test
     public void should_print_the_stub_purchase_when_call_process() {
         //given
+    	StubPurchase stubPurchase = new StubPurchase();
         //when
+    	cashRegister.process(stubPurchase);
         //then
+    	assertEquals("test_product\\t1.0\n", mockedPrinter.gerTempText());
     }
 
     @Test

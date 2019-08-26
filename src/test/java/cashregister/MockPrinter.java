@@ -14,4 +14,9 @@ public class MockPrinter extends Printer{
 		// TODO Auto-generated method stub
 		return this.tempText;
 	}
+
+	public void setTempText(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 }
