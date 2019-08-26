@@ -1,6 +1,11 @@
 package cashregister;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class CashRegister {
 
@@ -22,4 +27,13 @@ class CashRegister {
 		cashRegister = new CashRegister(mockPrinter);    		
 	}
     
+    @BeforeEach
+    private void cleanPrinter() {
+    	mockPrinter.setTempText("");
+    }
+    
+    @Test
+    public void should_print_the_real_purchase_when_call_process() {
+    	Item[] items = {new Item("test product", 1)};
+    }
 }

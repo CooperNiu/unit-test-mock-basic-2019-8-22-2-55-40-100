@@ -1,6 +1,7 @@
 package cashregister;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,10 @@ public class CashRegisterTest {
     @Test
     public void should_verify_with_process_call_with_mockito() {
         //given
+    	Printer printer = Mockito.mock(Printer.class);
+    	Purchase purchase = Mockito.mock(Purchase.class);
+    	
+    	Mockito.when(purchase.)
         //when
         //then
     }
